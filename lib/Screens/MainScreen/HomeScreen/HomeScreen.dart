@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:hakthon/home_screen.dart';
+import 'package:hakthon/Screens/MainScreen/MainScreen.dart';
 import 'package:hakthon/widgets/app_text.dart';
 
-class homeWidget extends StatelessWidget {
-  homeWidget({
+class HomeScreen extends StatelessWidget {
+  HomeScreen({
     Key? key,
   }) : super(key: key);
 
