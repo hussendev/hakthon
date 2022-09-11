@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:hakthon/widgets/app_text.dart';
-import 'package:hakthon/widgets/home_widget.dart';
-import 'package:hakthon/widgets/second_home_widget.dart';
+import 'package:hakthon/Screens/MainScreen/HomeScreen/HomeScreen.dart';
+import 'package:hakthon/Screens/MainScreen/HomeScreen/second_home_widget.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+class MainScreen extends StatefulWidget {
+  const MainScreen({Key? key}) : super(key: key);
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<MainScreen> createState() => _MainScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
+class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
   late TabController _controller;
 
   @override
@@ -72,7 +72,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
       body: TabBarView(
         controller: _controller,
         children: [
-          homeWidget(),
+          HomeScreen(),
           SecondHomeWidget(),
           Icon(Icons.directions_bike),
         ],

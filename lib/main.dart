@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hakthon/home_screen.dart';
+import 'package:hakthon/Screens/MainScreen/MainScreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       textDirection: TextDirection.ltr,
       child: MaterialApp(
         title: 'Flutter Demo',
-        home: HomeScreen(),
+        home: MainScreen(),
       ),
     );
   }
