@@ -1,4 +1,6 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hakthon/Screens/MainScreen/MainScreen.dart';
 import 'package:hakthon/widgets/app_text.dart';
 
@@ -9,78 +11,109 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(top: 25, left: 15),
-      child: ListView(
-        // crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            height: 160,
-            child: ListView.builder(
-              itemCount: 3,
-              itemBuilder: (context, index) {
-                return Container(
-                  margin: EdgeInsets.only(right: 15),
-                  height: 158,
-                  width: 269,
+    return Scaffold(
+      body: Padding(
+        padding: EdgeInsets.only(top: 25.h, left: 15.w),
+        child: ListView(
+          children: [
+            CarouselSlider(
+              options: CarouselOptions(
+                height: 158.h,
+                initialPage: 1,
+                enableInfiniteScroll: true,
+                reverse: false,
+                autoPlay: true,
+                enlargeCenterPage: true,
+                disableCenter: true,
+                autoPlayInterval: Duration(seconds: 3),
+                autoPlayAnimationDuration: Duration(milliseconds: 800),
+                autoPlayCurve: Curves.fastOutSlowIn,
+                scrollDirection: Axis.horizontal,
+
+              ),
+              items: [
+                Container(
+                  height: 158.h,
+                  width: 269.w,
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(vertical: 12.h),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        AppText(
+                            text: ' 4 تذاكر لحضور مهرجان الاصيل قط 50 ',
+                            size: 16.sp),
+                      ],
+                    ),
+                  ),
                   decoration: BoxDecoration(
                       color: Colors.amber,
                       borderRadius: BorderRadius.circular(12)),
-                );
-              },
-              scrollDirection: Axis.horizontal,
+                ),
+              ],
             ),
-          ),
-          SizedBox(
-            height: 25,
-          ),
-          AppText(
-            text: 'famous',
-            size: 16,
-          ),
-          SizedBox(
-            height: 14,
-          ),
-          SliderWidget(),
-           SizedBox(
-            height: 25,
-          ),
-          AppText(
-            text: 'soon',
-            size: 16,
-          ),
-          SizedBox(
-            height: 14,
-          ),
-          Container(
-            height: 160,
-            child: ListView.builder(
-              itemCount: 3,
-              itemBuilder: (context, index) {
-                return Container(
-                  margin: EdgeInsets.only(right: 16),
-                  height: 170,
-                  width: 343,
+            SizedBox(
+              height: 25.h,
+            ),
+            AppText(
+              text: 'famous',
+              size: 16.sp,
+            ),
+            SizedBox(
+              height: 14.sp,
+            ),
+            SliderWidget(),
+            SizedBox(
+              height: 25.sp,
+            ),
+            AppText(
+              text: 'soon',
+              size: 16.sp,
+            ),
+            SizedBox(
+              height: 14.h,
+            ),
+            CarouselSlider(
+              options: CarouselOptions(
+                height: 170.h,
+                initialPage: 1,
+                reverse: false,
+                autoPlay: true,
+                disableCenter: true,
+                enableInfiniteScroll: true,
+                viewportFraction: 01,
+                autoPlayInterval: Duration(seconds: 3),
+                autoPlayAnimationDuration: Duration(milliseconds: 800),
+                autoPlayCurve: Curves.fastOutSlowIn,
+                scrollDirection: Axis.horizontal,
+              ),
+              items: [
+                Container(
+                  margin: EdgeInsets.all(8),
+                  height: 170.h,
+                  width: 343.w,
                   decoration: BoxDecoration(
                       color: Colors.amber,
-                      borderRadius: BorderRadius.circular(12)),
-                );
-              },
-              scrollDirection: Axis.horizontal,
+                      borderRadius: BorderRadius.circular(4.r)),
+                )
+
+              ],
             ),
-          ),
-          SizedBox(
-            height: 44,
-          ),
-          AppText(
-            text: 'recently',
-            size: 16,
-          ),
-          SizedBox(
-            height: 14,
-          ),
-          SliderWidget(),
-        ],
+
+            SizedBox(
+              height: 44.h,
+            ),
+            AppText(
+              text: 'recently',
+              size: 16.sp,
+            ),
+            SizedBox(
+              height: 14.h,
+            ),
+            SliderWidget(),
+          ],
+        ),
       ),
     );
   }
@@ -94,17 +127,16 @@ class SliderWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 200,
+      height: 200.h,
       child: ListView.builder(
         itemCount: 3,
         itemBuilder: (context, index) {
           return Container(
             margin: EdgeInsets.only(right: 16),
-            height: 200,
-            width: 140,
+            height: 200.h,
+            width: 140.w,
             decoration: BoxDecoration(
-                color: Colors.amber,
-                borderRadius: BorderRadius.circular(12)),
+                color: Colors.amber, borderRadius: BorderRadius.circular(12.r)),
           );
         },
         scrollDirection: Axis.horizontal,
