@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:hakthon/Screens/MainScreen/DitailsScreen/DitailsScreen.dart';
 import 'package:hakthon/Screens/MainScreen/MainScreen.dart';
 import 'package:hakthon/widgets/app_text.dart';
 
@@ -42,8 +43,8 @@ class HomeScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         AppText(
-                            text: ' 4 تذاكر لحضور مهرجان الاصيل قط 50 ',
-                            size: 16.sp),
+                            text: ' 4 تذاكر لحضور مهرجان الاصيل قط 50 ',textStyle: Theme.of(context).textTheme.bodyText1!,
+                         ),
                       ],
                     ),
                   ),
@@ -57,8 +58,7 @@ class HomeScreen extends StatelessWidget {
               height: 25.h,
             ),
             AppText(
-              text: 'famous',
-              size: 16.sp,
+              text: 'famous',textStyle: Theme.of(context).textTheme.headline2!,
             ),
             SizedBox(
               height: 14.sp,
@@ -68,8 +68,7 @@ class HomeScreen extends StatelessWidget {
               height: 25.sp,
             ),
             AppText(
-              text: 'soon',
-              size: 16.sp,
+              text: 'soon',textStyle: Theme.of(context).textTheme.headline2!,
             ),
             SizedBox(
               height: 14.h,
@@ -105,8 +104,7 @@ class HomeScreen extends StatelessWidget {
               height: 44.h,
             ),
             AppText(
-              text: 'recently',
-              size: 16.sp,
+              text: 'recently',textStyle: Theme.of(context).textTheme.headline2!,
             ),
             SizedBox(
               height: 14.h,
@@ -126,20 +124,25 @@ class SliderWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 200.h,
-      child: ListView.builder(
-        itemCount: 3,
-        itemBuilder: (context, index) {
-          return Container(
-            margin: EdgeInsets.only(right: 16),
-            height: 200.h,
-            width: 140.w,
-            decoration: BoxDecoration(
-                color: Colors.amber, borderRadius: BorderRadius.circular(12.r)),
-          );
-        },
-        scrollDirection: Axis.horizontal,
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(context, MaterialPageRoute(builder: (context) => DitailsScreen(),));
+      },
+      child: Container(
+        height: 200.h,
+        child: ListView.builder(
+          itemCount: 3,
+          itemBuilder: (context, index) {
+            return Container(
+              margin: EdgeInsets.only(right: 16),
+              height: 200.h,
+              width: 140.w,
+              decoration: BoxDecoration(
+                  color: Colors.amber, borderRadius: BorderRadius.circular(12.r)),
+            );
+          },
+          scrollDirection: Axis.horizontal,
+        ),
       ),
     );
   }

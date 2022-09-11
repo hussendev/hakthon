@@ -36,7 +36,7 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
         backgroundColor: Color(0xffF2F2F2),
         title: AppText(
           text: 'Welcome',
-          size: 18,
+          textStyle: Theme.of(context).textTheme.headline3!,
         ),
         centerTitle: true,
         actions: [
@@ -51,19 +51,18 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
             Tab(
               icon: AppText(
                 text: 'test',
-                size: 16,
+
+         textStyle: Theme.of(context).textTheme.headline1!,
               ),
             ),
             Tab(
               icon: AppText(
-                text: 'test',
-                size: 16,
+                text: 'test',  textStyle: Theme.of(context).textTheme.headline1!,
               ),
             ),
             Tab(
               icon: AppText(
-                text: 'test',
-                size: 16,
+                text: 'test', textStyle: Theme.of(context).textTheme.headline1!,
               ),
             ),
           ],
