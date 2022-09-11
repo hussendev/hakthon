@@ -14,7 +14,6 @@ class DitailsScreen extends StatelessWidget {
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
           return <Widget>[
             SliverAppBar(
-
               expandedHeight: 300.0.h,
               floating: false,
               pinned: true,
