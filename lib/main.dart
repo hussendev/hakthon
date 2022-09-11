@@ -1,22 +1,44 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hakthon/Screens/MainScreen/MainScreen.dart';
 
+import 'Screens/MainScreen/DitailsScreen/DitailsScreen.dart';
+
 void main() {
-  runApp(const MyApp());
+  runApp( MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
-  @override
+
+
+
+   @override
   Widget build(BuildContext context) {
-    return Directionality(
-      textDirection: TextDirection.ltr,
-      child: MaterialApp(
-        title: 'Flutter Demo',
-        home: MainScreen(),
-      ),
+    return ScreenUtilInit(
+        designSize: const Size(360, 690),
+     minTextAdapt: true,
+     splitScreenMode: true,
+     builder: (context , child) {
+     return Directionality(
+        textDirection: TextDirection.ltr,
+        
+        child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(
+             scaffoldBackgroundColor:  Colors.white,
+            accentColor: Colors.transparent,
+            iconTheme: IconThemeData(
+              color: Colors.grey[600],
+size: 22
+            ),
+
+
+          ),
+          themeMode: ThemeMode.light,
+          home: DitailsScreen(imageUrl: "https://images.pexels.com/photos/396547/pexels-photo-396547.jpeg?auto=compress&cs=tinysrgb&h=350",),
+        ),
+      );}
     );
   }
 }
