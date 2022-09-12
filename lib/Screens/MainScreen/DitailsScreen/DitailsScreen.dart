@@ -199,7 +199,7 @@ class _DitailsScreenState extends State<DitailsScreen> {
                             child: InkWell(
                               child: Icon(
                                 Icons.share_rounded,
-                                color: Color(0xff3c48c5),
+                                color: Theme.of(context).cardColor,
                                 size: 25,
                               ),
                             ),
@@ -354,7 +354,7 @@ class _DitailsScreenState extends State<DitailsScreen> {
                             trimExpandedText: 'Read less',
                             moreStyle:
                                 Theme.of(context).textTheme.bodyText2?.copyWith(
-                                      color: Color(0xff3c48c5),
+                                      color: Theme.of(context).cardColor,
                                       fontWeight: FontWeight.w600,
                                     ),
                           ),
@@ -412,7 +412,7 @@ class _DitailsScreenState extends State<DitailsScreen> {
                                     children: [
                                       Icon(
                                         Icons.timelapse,
-                                        color: Color(0xff3c48c5),
+                                        color: Theme.of(context).cardColor,
                                         size: 25,
                                       ),
                                       SizedBox(
@@ -422,7 +422,7 @@ class _DitailsScreenState extends State<DitailsScreen> {
                                         height: 40.h,
                                         width: 2.5.w,
                                         decoration: BoxDecoration(
-                                            color: Color(0xff3c48c5),
+                                            color: Theme.of(context).cardColor,
                                             borderRadius:
                                                 BorderRadius.circular(5.r)),
                                       ),
