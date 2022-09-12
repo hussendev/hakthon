@@ -47,10 +47,7 @@ class _DitailsScreenState extends State<DitailsScreen> {
                       width: 30.h,
                       margin: EdgeInsets.symmetric(horizontal: 20.w),
                       decoration: BoxDecoration(
-                          color: MediaQuery.of(context).platformBrightness ==
-                                  Brightness.light
-                              ? Color(0xFFF5F5F5)
-                              : Colors.black87,
+                          color: Theme.of(context).scaffoldBackgroundColor,
                           borderRadius: BorderRadius.circular(5555.r)),
                       child: InkWell(
                           onTap: () {},
@@ -74,10 +71,7 @@ class _DitailsScreenState extends State<DitailsScreen> {
                     width: 30.h,
                     margin: EdgeInsets.symmetric(horizontal: 20.w),
                     decoration: BoxDecoration(
-                        color: MediaQuery.of(context).platformBrightness ==
-                                Brightness.light
-                            ? Color(0xFFF5F5F5)
-                            : Colors.black87,
+                        color: Theme.of(context).scaffoldBackgroundColor,
                         borderRadius: BorderRadius.circular(5555.r)),
                     child: InkWell(
                         onTap: () {},
@@ -92,9 +86,7 @@ class _DitailsScreenState extends State<DitailsScreen> {
                 ],
               ),
               backgroundColor:
-                  MediaQuery.of(context).platformBrightness == Brightness.light
-                      ?Color(0xFFF5F5F5)
-                      : Colors.black87,
+                Theme.of(context).scaffoldBackgroundColor,
               flexibleSpace: FlexibleSpaceBar(
                 background: Stack(
                   alignment: Alignment.bottomCenter,
@@ -118,12 +110,13 @@ class _DitailsScreenState extends State<DitailsScreen> {
                     Align(
                       alignment: Alignment.bottomLeft,
                       child: Card(
+
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(6.r)),
                         elevation: 5,
                         margin: EdgeInsets.symmetric(
                             horizontal: 16.w, vertical: 32.h),
-                        color: Color(0xFFF5F5F5),
+                        color: Theme.of(context).scaffoldBackgroundColor,
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
                           children: [
@@ -156,10 +149,7 @@ class _DitailsScreenState extends State<DitailsScreen> {
                           topLeft: Radius.circular(50.r),
                           topRight: Radius.circular(50.r),
                         ),
-                        color: MediaQuery.of(context).platformBrightness ==
-                                Brightness.light
-                            ? Color(0xFFF5F5F5)
-                            : Colors.black87,
+                        color: Theme.of(context).scaffoldBackgroundColor,
                       ),
                     ),
                   ],
